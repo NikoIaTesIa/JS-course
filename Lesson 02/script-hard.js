@@ -2,7 +2,7 @@ let num = 266219
 let mult = 1
 
 let numStr = num.toString()
-for (i = 0; i < numStr.length; ++i) {
+for (let i = 0; i < numStr.length; ++i) {
     mult *= +(numStr[i])
 }
 
