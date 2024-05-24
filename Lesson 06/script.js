@@ -14,21 +14,22 @@ const gameProcess = function() {
                 return;
             }
             
-            if (attempts === 0) {
-                let answer = confirm("The attempts are over.\nWould you like to play again?")
-                if (answer) { gameProcess() } 
-                else { alert("Game over. Thanks for playing!") }
-
-            } else if (isNumber(num)) {
+            if (isNumber(num)) {
                 num = +(num.trim())
                 
+                attempts--
+                if (attempts === 0) {
+                    let answer = confirm("The attempts are over.\nWould you like to play again?")
+                    if (answer) { gameProcess() } 
+                    else { alert("Game over. Thanks for playing!") }
+                    return;
+                }
+                
                 if (randNum > num) {
-                    attempts--
                     num = prompt("The hidden number is greater! Attempts left: " + attempts + "\nTry another number:")
                     handleNumber()
 
                 } else if (randNum < num) {
-                    attempts--
                     num = prompt("The hidden number is less! Attempts left: " + attempts + "\nTry another number:")
                     handleNumber()
                     
