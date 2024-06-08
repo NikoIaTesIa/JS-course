@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Таблица сотрудников</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" class="worker-form" id="form">
+            <div class="worker-form__controls">
+                <div class="worker-form__inputs" id="form-general">
+                    <div class="worker-form__item">
+                        <input type="text" required placeholder="Имя" id="input-name-1">
+                    </div>
+                    <div class="worker-form__item">
+                        <input type="text" required placeholder="Фамилия" id="input-name-2">
+                    </div>
+                    <div class="worker-form__item">
+                        <input type="text" required placeholder="Возраст" id="input-age">
+                    </div>
+                    <div class="worker-form__item" id="checkbox-item">
+                        <input type="checkbox" id="checkbox">
+                        <label for="checkbox">Наличие детей</label>
+                    </div>
+                </div>
+                <div class="worker-form__inputs" id="form-profession">
+                    <div class="worker-form__item">
+                        <select class="form-select" required id="select-profession">
+                            <option value="" selected>Профессия</option>
+                            <option value="Developer">Разработчик</option>
+                            <option value="Teacher">Учитель</option>
+                        </select>
+                    </div>
+
+                    <div class="worker-form__profession-items" id="Developer" style="display: none;">
+                        <div class="worker-form__item">
+                            <input type="text" placeholder="Должность" id="input-developer">
+                        </div>
+                        <div class="worker-form__item">
+                            <input type="text" placeholder="Наименование компании" id="input-company">
+                        </div>
+                        <div class="worker-form__item">
+                            <select class="form-select" id="select-grade">
+                                <option value="" selected>Уровень</option>
+                                <option value="Junior">Junior</option>
+                                <option value="Middle">Middle</option>
+                                <option value="Senior">Senior</option>
+                                <option value="Lead">Lead</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="worker-form__profession-items" id="Teacher" style="display: none;">
+                        <div class="worker-form__item">
+                            <input type="text" placeholder="Должность" id="input-teacher">
+                        </div>
+                        <div class="worker-form__item">
+                            <input type="text" placeholder="Учебная организация" id="input-oraganization">
+                        </div>
+                        <div class="worker-form__item">
+                            <input type="text" placeholder="Стаж" id="input-expirience">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="worker-form__submit">
+                <button type="submit" id="submit-btn">Сохранить</button>
+            </div>
+        </form>
+
+        <table class="worker-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Фамилия</th>
+                    <th scope="col">Возраст</th>
+                    <th scope="col">Наличие детей</th>
+                    <th scope="col">Профессия</th>
+                    <th scope="col">Параметр №1</th>
+                    <th scope="col">Параметр №2</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
