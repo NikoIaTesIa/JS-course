@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background: linear-gradient(135deg, #CFD58D, #6DA59A);
+    font-family: 'Courier New'; 
+    font-size: 1.2rem;
+}
+
+body > h1 {
+    margin-bottom: 20px;
+}
+
+body > h3 {
+    margin-bottom: 10px;
+}
