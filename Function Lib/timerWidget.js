@@ -31,7 +31,7 @@ const timerWidget = (deadline) => {
             clearInterval(intervalId)
         }
 
-        if (intervalId === undefined) {
+        if (!intervalId) {
             intervalId = setInterval(updateTimer, 1000)
         }
     }
