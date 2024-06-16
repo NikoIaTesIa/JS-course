@@ -21,39 +21,32 @@ square.addEventListener('click', (e) => {
 
         const squareNodes = [...square.children]
         const index = squareNodes.indexOf(block)
+        const action = { index1: index, index2: 0 }
+
+        let swapIndex
 
         if (arrow.classList.contains('top')) {
             if (index > squareSize - 1) {
-                const swapIndex = index - squareSize
-                const action = { index1: index, index2: swapIndex }
-
-                swapElements(squareNodes[index], squareNodes[swapIndex])
-                actionStack.push(action)
+                swapIndex = index - squareSize
             }
         } else if (arrow.classList.contains('bottom')) {
             if (index < squareLength - squareSize) {
-                const swapIndex = index + squareSize
-                const action = { index1: index, index2: swapIndex }
-
-                swapElements(squareNodes[index], squareNodes[swapIndex])
-                actionStack.push(action)
+                swapIndex = index + squareSize
             }
         } else if (arrow.classList.contains('right')) {
             if (index < squareLength - 1) {
-                const swapIndex = index + 1
-                const action = { index1: index, index2: swapIndex }
-
-                swapElements(squareNodes[index], squareNodes[swapIndex])
-                actionStack.push(action)
+                swapIndex = index + 1
             }
         } else if (arrow.classList.contains('left')) {
             if (index > 0) {
-                const swapIndex = index - 1
-                const action = { index1: index, index2: swapIndex }
-
-                swapElements(squareNodes[index], squareNodes[swapIndex])
-                actionStack.push(action)
+                swapIndex = index - 1
             }
+        }
+
+        if (swapIndex !== undefined) {
+            action.index2 = swapIndex
+            actionStack.push(action)
+            swapElements(squareNodes[index], squareNodes[swapIndex])
         }
     }
 })
